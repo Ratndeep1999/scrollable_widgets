@@ -40,6 +40,7 @@ class ListViewWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black, width: 2.0),
               ),
+              /// Horizontal ListView
               child: ListView(
                 padding: EdgeInsets.all(8.0),
                 scrollDirection: Axis.horizontal,
@@ -55,6 +56,7 @@ class ListViewWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black, width: 2.0),
                 ),
+                /// Vertical ListView
                 child: ListView(
                   scrollDirection: Axis.vertical,
                   padding: EdgeInsets.all(8.0),
