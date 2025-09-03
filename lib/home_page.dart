@@ -22,32 +22,34 @@ class HomePage extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.grey[300]
+                    color: Colors.grey[300],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        'ListView()',
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.orange,
-                        ),
-                      ),
-                      Icon(
-                        Icons.navigate_next,
-                        size: 50,
-                        color: Colors.orange,
-                      )
-                    ],
-                  ),
+
+                  /// build item
+                  child: buildItem(),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
+    );
+  }
+
+  Row buildItem() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Text(
+          'ListView()',
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w700,
+            color: Colors.orange,
+          ),
+        ),
+        Icon(Icons.navigate_next, size: 50, color: Colors.orange),
+      ],
     );
   }
 }
