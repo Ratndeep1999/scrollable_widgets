@@ -14,13 +14,21 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-
             /// ListView()
-            InkWell(
-              onTap: (){},
-              child: buildItem(context),
+            buildItem(
+              context,
+              title: 'ListView()',
+              onTap: () {},
             ),
 
+            /// ListView.builder()
+            buildItem(context, title: 'ListView.builder()', onTap: () {}),
+
+            /// ListView.separated()
+            buildItem(context, title: 'ListView.separated()', onTap: () {}),
+
+            /// ListView.custom()
+            buildItem(context, title: 'ListView.custom()', onTap: () {}),
           ],
         ),
       ),
@@ -28,37 +36,44 @@ class HomePage extends StatelessWidget {
   }
 
   // build item method
-  Padding buildItem(BuildContext context) {
+  Padding buildItem(
+    BuildContext context, {
+    required String title,
+    required VoidCallback onTap,
+  }) {
     return Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.07,
-              width: double.infinity,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.grey[300]
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      'ListView()',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.orange,
-                      ),
-                    ),
-                    Icon(
-                      Icons.navigate_next,
-                      size: 50,
-                      color: Colors.orange,
-                    )
-                  ],
-                ),
-              ),
+      padding: const EdgeInsets.all(16.0),
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.07,
+        width: double.infinity,
+        // onTap
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(30.0),
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30.0),
+              color: Colors.grey[300],
             ),
-          );
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                // Text
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.orange,
+                  ),
+                ),
+                // Icon
+                Icon(Icons.navigate_next, size: 50, color: Colors.orange),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
