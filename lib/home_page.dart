@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scrollablewidgets/list_view_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return ListView();
+                      return ListViewWidget();
                     },
                   ),
                 );
