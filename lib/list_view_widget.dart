@@ -15,6 +15,7 @@ class ListViewWidget extends StatelessWidget {
         child: Column(
           children: [
             Container(
+              margin: EdgeInsets.all(16.0),
               height: 200,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black, width: 2.0),
@@ -71,57 +72,64 @@ class ListViewWidget extends StatelessWidget {
                 ],
               ),
             ),
+
             Expanded(
-              child: ListView(
-                scrollDirection: Axis.vertical,
-                padding: EdgeInsets.all(16.0),
-                children: [
-                  Container(
-                    height: 200,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.red,
-                  ),
-                ],
+              child: Container(
+                margin: EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 2.0),
+                ),
+                child: ListView(
+                  scrollDirection: Axis.vertical,
+                  padding: EdgeInsets.all(8.0),
+                  children: [
+                    Container(
+                      height: 200,
+                      margin: EdgeInsets.all(8.0),
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 200,
+                      margin: EdgeInsets.all(8.0),
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 200,
+                      margin: EdgeInsets.all(8.0),
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 200,
+                      margin: EdgeInsets.all(8.0),
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 200,
+                      margin: EdgeInsets.all(8.0),
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 200,
+                      margin: EdgeInsets.all(8.0),
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 200,
+                      margin: EdgeInsets.all(8.0),
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 200,
+                      margin: EdgeInsets.all(8.0),
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 200,
+                      margin: EdgeInsets.all(8.0),
+                      color: Colors.red,
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
