@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,11 +16,36 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              children: [
-                Text('ListView()', style: TextStyle(fontSize: 25, color: Colors.black45),),
-                Icon(Icons.arrow_right)
-              ],
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.07,
+                width: double.infinity,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.grey[300]
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'ListView()',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.orange,
+                        ),
+                      ),
+                      Icon(
+                        Icons.navigate_next,
+                        size: 50,
+                        color: Colors.orange,
+                      )
+                    ],
+                  ),
+                ),
+              ),
             )
           ],
         ),
