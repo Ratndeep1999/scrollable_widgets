@@ -3,6 +3,24 @@ import 'package:flutter/material.dart';
 class ListViewWidget extends StatelessWidget {
   const ListViewWidget({super.key});
 
+  // For Horizontal scroll ListView
+  Widget _getContainerHori() {
+    return Container(
+      width: 180,
+      margin: EdgeInsets.all(8.0),
+      color: Colors.blue,
+    );
+  }
+
+  // For Vertical scroll ListView
+  Widget _getContainerVert() {
+    return Container(
+      height: 200,
+      margin: EdgeInsets.all(8.0),
+      color: Colors.red,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,51 +44,7 @@ class ListViewWidget extends StatelessWidget {
                 padding: EdgeInsets.all(8.0),
                 scrollDirection: Axis.horizontal,
                 children: [
-                  Container(
-                    width: 180,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 180,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 180,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 180,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 180,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 180,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 180,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 180,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 180,
-                    margin: EdgeInsets.all(8.0),
-                    color: Colors.blue,
-                  ),
+                  _getContainerHori(),
                 ],
               ),
             ),
@@ -85,51 +59,7 @@ class ListViewWidget extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   padding: EdgeInsets.all(8.0),
                   children: [
-                    Container(
-                      height: 200,
-                      margin: EdgeInsets.all(8.0),
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      margin: EdgeInsets.all(8.0),
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      margin: EdgeInsets.all(8.0),
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      margin: EdgeInsets.all(8.0),
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      margin: EdgeInsets.all(8.0),
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      margin: EdgeInsets.all(8.0),
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      margin: EdgeInsets.all(8.0),
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      margin: EdgeInsets.all(8.0),
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      margin: EdgeInsets.all(8.0),
-                      color: Colors.red,
-                    ),
+                    _getContainerVert()
                   ],
                 ),
               ),
