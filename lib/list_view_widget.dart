@@ -14,10 +14,13 @@ class ListViewWidget extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(
+            Container(
               height: 200,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black, width: 2.0),
+              ),
               child: ListView(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(8.0),
                 scrollDirection: Axis.horizontal,
                 children: [
                   Container(
@@ -69,55 +72,60 @@ class ListViewWidget extends StatelessWidget {
               ),
             ),
             Expanded(
-                child: ListView(
-                  scrollDirection: Axis.vertical,
-                  padding: EdgeInsets.all(16.0),
-                  children: [
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                    Container(
-                      height: 200,
-                      color: Colors.red,
-                    ),
-                  ],
-                )
+              child: ListView(
+                scrollDirection: Axis.vertical,
+                padding: EdgeInsets.all(16.0),
+                children: [
+                  Container(
+                    height: 200,
+                    margin: EdgeInsets.all(8.0),
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: EdgeInsets.all(8.0),
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: EdgeInsets.all(8.0),
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: EdgeInsets.all(8.0),
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: EdgeInsets.all(8.0),
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: EdgeInsets.all(8.0),
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: EdgeInsets.all(8.0),
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: EdgeInsets.all(8.0),
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: EdgeInsets.all(8.0),
+                    color: Colors.red,
+                  ),
+                ],
+              ),
             ),
           ],
-        )
+        ),
       ),
     );
   }
