@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text('ListView()'),
+                Text('ListView()', style: TextStyle(fontSize: 25, color: Colors.black45),),
                 Icon(Icons.arrow_right)
               ],
             )
