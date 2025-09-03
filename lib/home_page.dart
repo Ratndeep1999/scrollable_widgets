@@ -15,11 +15,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             /// ListView()
-            buildItem(
-              context,
-              title: 'ListView()',
-              onTap: () {},
-            ),
+            buildItem(context, title: 'ListView()', onTap: () {}),
 
             /// ListView.builder()
             buildItem(context, title: 'ListView.builder()', onTap: () {}),
