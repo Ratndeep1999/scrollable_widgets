@@ -6,7 +6,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Scrollable Widgets'),
+        centerTitle: true,
+        backgroundColor: Colors.orange[300],
+      ),
       body: SafeArea(child: Column()),
     );
   }
