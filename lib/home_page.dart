@@ -14,42 +14,51 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.07,
-                width: double.infinity,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.grey[300],
-                  ),
 
-                  /// build item
-                  child: buildItem(),
-                ),
-              ),
+            /// ListView()
+            InkWell(
+              onTap: (){},
+              child: buildItem(context),
             ),
+
           ],
         ),
       ),
     );
   }
 
-  Row buildItem() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Text(
-          'ListView()',
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w700,
-            color: Colors.orange,
-          ),
-        ),
-        Icon(Icons.navigate_next, size: 50, color: Colors.orange),
-      ],
-    );
+  // build item method
+  Padding buildItem(BuildContext context) {
+    return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.07,
+              width: double.infinity,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: Colors.grey[300]
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'ListView()',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.orange,
+                      ),
+                    ),
+                    Icon(
+                      Icons.navigate_next,
+                      size: 50,
+                      color: Colors.orange,
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
   }
 }
