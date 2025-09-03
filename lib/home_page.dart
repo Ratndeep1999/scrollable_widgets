@@ -11,7 +11,18 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.orange[300],
       ),
-      body: SafeArea(child: Column()),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Text('ListView()'),
+                Icon(Icons.arrow_right)
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
