@@ -10,6 +10,8 @@ class ListViewWidget extends StatelessWidget {
         title: Text('ListView Widgets'),
         centerTitle: true,
         backgroundColor: Colors.orange[300],
+        actions: [Icon(Icons.navigate_next, size: 40,)],
+        actionsPadding: EdgeInsets.only(right: 10.0),
       ),
       body: SafeArea(
         child: Column(
