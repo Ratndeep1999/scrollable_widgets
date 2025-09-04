@@ -30,7 +30,10 @@ class ListViewBuilderWidget extends StatelessWidget {
                     ),
                   ),
                   title: Text(users[index].name),
-                  subtitle: Text(users[index].profession),
+                  subtitle: Text(
+                    users[index].profession,
+                    style: TextStyle(fontSize: 14, color: Colors.black),
+                  ),
                 );
               },
             ),
