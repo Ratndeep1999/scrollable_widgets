@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class ListViewWidget extends StatelessWidget {
@@ -83,6 +84,9 @@ class ListViewWidget extends StatelessWidget {
                   padding: EdgeInsets.all(8.0),
                   scrollDirection: Axis.vertical,
                   physics: BouncingScrollPhysics(),
+                  primary: true,
+                  dragStartBehavior: DragStartBehavior.down,
+                  prototypeItem: SizedBox(height: 200, width: 200,), // give exact height and width for each item
                   children: [
                     _getContainerVert(0),
                     _getContainerVert(1),
