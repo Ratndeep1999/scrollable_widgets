@@ -2,10 +2,10 @@ class User{
   // Attributes
   final String name;
   final String profession;
-  final String images;
+  final String image;
 
   // Constructor
-  User(this.name, this.profession, this.images);
+  User(this.name, this.profession, this.image);
 
 }
 
