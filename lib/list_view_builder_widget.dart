@@ -16,25 +16,40 @@ class ListViewBuilderWidget extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.asset(users[0].image, width: 200, height: 200),
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.all(16.0),
               itemCount: users.length,
               itemBuilder: (BuildContext context, index) {
-                return ListTile(
-                  /// Picture
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage(
-                      'assets/images/${users[index].image}', // this fetch the image
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0),
                     ),
-                  ),
-                  /// Name
-                  title: Text(users[index].name),
-                  /// Profession
-                  subtitle: Text(
-                    users[index].profession,
-                    style: TextStyle(fontSize: 14, color: Colors.black),
+                    minVerticalPadding: 16.0,
+                    tileColor: Colors.grey[300],
+                    /// Picture
+                    leading: CircleAvatar(
+                      radius: 24.0,
+                      backgroundImage: AssetImage(
+                        'assets/images/${users[index].image}',
+                      ),
+                    ),
+                    /// Name
+                    title: Text(users[index].name),
+                    titleTextStyle: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                    /// Profession
+                    subtitle: Text(users[index].profession),
+                    subtitleTextStyle: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black54,
+                    ),
                   ),
                 );
               },
