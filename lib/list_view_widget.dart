@@ -46,10 +46,13 @@ class ListViewWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black, width: 2.0),
               ),
+
               /// Horizontal ListView
               child: ListView(
                 padding: EdgeInsets.all(8.0),
                 scrollDirection: Axis.horizontal,
+                reverse: true,  // item starts from reverse
+                physics: BouncingScrollPhysics(), //
                 children: [
                   _getContainerHori(0),
                   _getContainerHori(1),
@@ -74,10 +77,12 @@ class ListViewWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black, width: 2.0),
                 ),
+
                 /// Vertical ListView
                 child: ListView(
-                  scrollDirection: Axis.vertical,
                   padding: EdgeInsets.all(8.0),
+                  scrollDirection: Axis.vertical,
+                  physics: BouncingScrollPhysics(),
                   children: [
                     _getContainerVert(0),
                     _getContainerVert(1),
