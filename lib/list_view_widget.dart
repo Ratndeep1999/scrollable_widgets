@@ -86,7 +86,8 @@ class ListViewWidget extends StatelessWidget {
                   physics: BouncingScrollPhysics(),
                   primary: true,
                   dragStartBehavior: DragStartBehavior.down,
-                  prototypeItem: SizedBox(height: 200, width: 200,), // give exact height and width for each item
+                  itemExtent: 200,  // forcibly height to each item
+                  //prototypeItem: SizedBox(height: 200, width: 200,), // give exact height and width for each item
                   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag, // behavior
                   children: [
                     _getContainerVert(0),
