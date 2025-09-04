@@ -5,25 +5,25 @@ class ListViewWidget extends StatelessWidget {
 
   // For Horizontal scroll ListView
   Widget _getContainerHori(int index) {
-    debugPrint('Called $index Index for Horizontal');
+    debugPrint('Called $index Index for Horizontal ListView');
     return Container(
       alignment: Alignment.center,
       width: 180,
       margin: EdgeInsets.all(8.0),
       color: Colors.blue[200],
-      child: Text(index.toString()),
+      child: Text(index.toString(), style: TextStyle(fontSize: 40),),
     );
   }
 
   // For Vertical scroll ListView
   Widget _getContainerVert(int index) {
-    debugPrint('Called $index Index for Vertical');
+    debugPrint('Called $index Index for Vertical ListView');
     return Container(
       alignment: Alignment.center,
       height: 200,
       margin: EdgeInsets.all(8.0),
       color: Colors.red[200],
-      child: Text(index.toString()),
+      child: Text(index.toString(), style: TextStyle(fontSize: 40),),
     );
   }
 
