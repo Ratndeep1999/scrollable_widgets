@@ -23,13 +23,15 @@ class ListViewBuilderWidget extends StatelessWidget {
               itemCount: users.length,
               itemBuilder: (BuildContext context, index) {
                 return ListTile(
+                  /// Picture
                   leading: CircleAvatar(
-                    //backgroundColor: Colors.transparent,
                     backgroundImage: AssetImage(
-                      users[index].image, // this fetch the image
+                      'assets/images/${users[index].image}', // this fetch the image
                     ),
                   ),
+                  /// Name
                   title: Text(users[index].name),
+                  /// Profession
                   subtitle: Text(
                     users[index].profession,
                     style: TextStyle(fontSize: 14, color: Colors.black),
