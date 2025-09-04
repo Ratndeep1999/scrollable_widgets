@@ -1,11 +1,14 @@
 class User {
+  // Attributes
   final String name;
   final String profession;
   final String images;
 
+  // Constructor
   User(this.name, this.profession, this.images);
 
-  List users = [
+  // Object to store multiple data of user
+  List<User> users = [
     User('Grace Anderson', 'Software Engineer', 'person1.jpg'),
     User('Sophia Brown', "Flutter Developer", 'person2.jpg'),
     User('Charlotte Harris', "Web Developer", 'person3.jpg'),
