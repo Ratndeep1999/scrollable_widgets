@@ -4,20 +4,26 @@ class ListViewWidget extends StatelessWidget {
   const ListViewWidget({super.key});
 
   // For Horizontal scroll ListView
-  Widget _getContainerHori() {
+  Widget _getContainerHori(int index) {
+    debugPrint('Called $index Index for Horizontal');
     return Container(
+      alignment: Alignment.center,
       width: 180,
       margin: EdgeInsets.all(8.0),
-      color: Colors.blue,
+      color: Colors.blue[200],
+      child: Text(index.toString()),
     );
   }
 
   // For Vertical scroll ListView
-  Widget _getContainerVert() {
+  Widget _getContainerVert(int index) {
+    debugPrint('Called $index Index for Vertical');
     return Container(
+      alignment: Alignment.center,
       height: 200,
       margin: EdgeInsets.all(8.0),
-      color: Colors.red,
+      color: Colors.red[200],
+      child: Text(index.toString()),
     );
   }
 
@@ -45,7 +51,19 @@ class ListViewWidget extends StatelessWidget {
                 padding: EdgeInsets.all(8.0),
                 scrollDirection: Axis.horizontal,
                 children: [
-                  _getContainerHori(),
+                  _getContainerHori(0),
+                  _getContainerHori(1),
+                  _getContainerHori(2),
+                  _getContainerHori(3),
+                  _getContainerHori(4),
+                  _getContainerHori(5),
+                  _getContainerHori(6),
+                  _getContainerHori(7),
+                  _getContainerHori(8),
+                  _getContainerHori(9),
+                  _getContainerHori(10),
+                  _getContainerHori(11),
+
                 ],
               ),
             ),
@@ -61,7 +79,18 @@ class ListViewWidget extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   padding: EdgeInsets.all(8.0),
                   children: [
-                    _getContainerVert()
+                    _getContainerVert(0),
+                    _getContainerVert(1),
+                    _getContainerVert(2),
+                    _getContainerVert(3),
+                    _getContainerVert(4),
+                    _getContainerVert(5),
+                    _getContainerVert(6),
+                    _getContainerVert(7),
+                    _getContainerVert(8),
+                    _getContainerVert(9),
+                    _getContainerVert(10),
+                    _getContainerVert(11),
                   ],
                 ),
               ),
