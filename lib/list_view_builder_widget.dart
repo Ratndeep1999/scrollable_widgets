@@ -16,9 +16,13 @@ class ListViewBuilderWidget extends StatelessWidget {
       ),
       body: ListView.builder(
         itemCount: users.length,
-        itemBuilder: (BuildContext context, index){
+        itemBuilder: (BuildContext context, index) {
           return ListTile(
-            leading: CircleAvatar(backgroundImage: AssetImage(),),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(
+                users[index].images, // this fetch the image
+              ),
+            ),
           );
         },
       ),
