@@ -61,10 +61,63 @@ class HomePage extends StatelessWidget {
             ),
 
             /// ListView.separated()
-            buildItem(context, title: 'ListView.separated()', onTap: () {}),
+            buildItem(
+              context,
+              title: 'ListView.separated()',
+              onTap: () {
+                Navigator.of(context).push(
+                  // Slide from Bottom
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        ListViewBuilderWidget(),
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(0.0, 1.0);
+                          const end = Offset.zero;
+                          var tween = Tween(begin: begin, end: end);
+                          var offsetAnimation = animation.drive(tween);
+
+                          return SlideTransition(
+                            position: offsetAnimation,
+                            child: child,
+                          );
+                        },
+                  ),
+                );
+              },
+            ),
 
             /// ListView.custom()
-            buildItem(context, title: 'ListView.custom()', onTap: () {}),
+            buildItem(
+              context,
+              title: 'ListView.custom()',
+              onTap: () {
+                // Slide from left to right with 1 sec
+                Navigator.of(context).push(
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        ListViewBuilderWidget(),
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(
+                            1.0,
+                            0.0,
+                          ); // Start from right side
+                          const end = Offset.zero; // End at normal position
+                          var tween = Tween(begin: begin, end: end);
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(
+                            position: offsetAnimation,
+                            child: child,
+                          );
+                        },
+                    transitionDuration: const Duration(
+                      seconds: 1,
+                    ), // 1 second duration
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
