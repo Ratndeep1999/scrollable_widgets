@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scrollablewidgets/list_view_builder_widget.dart';
 import 'package:scrollablewidgets/list_view_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,19 +21,44 @@ class HomePage extends StatelessWidget {
               context,
               title: 'ListView()',
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ListViewWidget();
-                    },
+                Navigator.of(context).push(
+                  // Fade Transition
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        ListViewWidget(),
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: child,
+                          );
+                        },
                   ),
                 );
               },
             ),
 
             /// ListView.builder()
-            buildItem(context, title: 'ListView.builder()', onTap: () {}),
+            buildItem(
+              context,
+              title: 'ListView.builder()',
+              onTap: () {
+                Navigator.of(context).push(
+                  // Scale (Zoom-in) Transition
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        ListViewBuilderWidget(),
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) {
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          );
+                        },
+                  ),
+                );
+              },
+            ),
 
             /// ListView.separated()
             buildItem(context, title: 'ListView.separated()', onTap: () {}),
