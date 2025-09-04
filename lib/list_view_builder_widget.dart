@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scrollablewidgets/user_model.dart';
 
 class ListViewBuilderWidget extends StatelessWidget {
   const ListViewBuilderWidget({super.key});
@@ -10,14 +11,17 @@ class ListViewBuilderWidget extends StatelessWidget {
         title: Text('ListView.builder Widgets'),
         centerTitle: true,
         backgroundColor: Colors.orange[300],
-        actions: [Icon(Icons.navigate_next, size: 40,)],
+        actions: [Icon(Icons.navigate_next, size: 40)],
         actionsPadding: EdgeInsets.only(right: 10.0),
       ),
-      body: Container(
-        margin: EdgeInsets.all(16.0),
-        color: Colors.red[100],
-      )
-      //ListView.builder(itemBuilder: itemBuilder),
+      body: ListView.builder(
+        itemCount: users.length,
+        itemBuilder: (BuildContext context, index){
+          return ListTile(
+            leading: CircleAvatar(backgroundImage: AssetImage(),),
+          );
+        },
+      ),
     );
   }
 }
