@@ -87,6 +87,7 @@ class ListViewWidget extends StatelessWidget {
                   primary: true,
                   dragStartBehavior: DragStartBehavior.down,
                   prototypeItem: SizedBox(height: 200, width: 200,), // give exact height and width for each item
+                  keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag, // behavior
                   children: [
                     _getContainerVert(0),
                     _getContainerVert(1),
