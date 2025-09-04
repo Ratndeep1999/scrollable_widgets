@@ -52,6 +52,7 @@ class ListViewWidget extends StatelessWidget {
                 padding: EdgeInsets.all(8.0),
                 scrollDirection: Axis.horizontal,
                 reverse: true,  // item starts from reverse
+                shrinkWrap: false,  // adjust space using items
                 physics: BouncingScrollPhysics(), //
                 children: [
                   _getContainerHori(0),
@@ -66,7 +67,6 @@ class ListViewWidget extends StatelessWidget {
                   _getContainerHori(9),
                   _getContainerHori(10),
                   _getContainerHori(11),
-
                 ],
               ),
             ),
