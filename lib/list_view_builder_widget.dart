@@ -9,7 +9,7 @@ class ListViewBuilderWidget extends StatefulWidget {
 }
 
 class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
-  int? selectedIndex; // store index of selected tile
+  Set<int?> selectedIndex = {}; // store indexes of selected tile
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,8 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
         itemCount: users.length,
         itemBuilder: (BuildContext context, index) {
           // tile is selected if it's index matches
-          bool isSelected = selectedIndex == index;
+          bool isSelected = selectedIndex.contains(index) ? true : false;
+          //selectedIndex == index; For single tile selection
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 4.0),
 
@@ -45,8 +46,9 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
       onTap: () {
         debugPrint('On Clicked $index');
         setState(() {
-          // index store to selectedIndex
-          selectedIndex = index;
+          // indexes store to selectedIndex
+          selectedIndex.add(index);
+          // selectedIndex = index; For store single index
         });
       },
       onFocusChange: (hasFocus) {
