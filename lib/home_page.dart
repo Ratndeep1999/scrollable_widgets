@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollablewidgets/list_view_builder_widget.dart';
 import 'package:scrollablewidgets/list_view_widget.dart';
@@ -131,7 +132,9 @@ class HomePage extends StatelessWidget {
     required VoidCallback onTap,
   }) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: kIsWeb
+          ? const EdgeInsets.symmetric(horizontal: 400.0, vertical: 16.0)
+          : const EdgeInsets.all(16.0),
       child: SizedBox(
         height: MediaQuery.of(context).size.height * 0.07,
         width: double.infinity,
