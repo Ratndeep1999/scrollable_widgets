@@ -33,7 +33,7 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
             padding: const EdgeInsets.symmetric(vertical: 4.0),
 
             /// ListTile method
-            child: buildListTile(index, isSelected),
+            child: _buildListTile(index, isSelected),
           );
         },
       ),
@@ -41,7 +41,7 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
   }
 
   // ListTile method
-  ListTile buildListTile(int index, bool isSelected) {
+  ListTile _buildListTile(int index, bool isSelected) {
     return ListTile(
       onTap: () {
         debugPrint('On Clicked $index');
