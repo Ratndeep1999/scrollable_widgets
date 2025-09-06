@@ -46,9 +46,9 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
       onTap: () {
         debugPrint('On Clicked $index');
         setState(() {
+          // selectedIndex = index; For store single index
           // indexes store to selectedIndex
           selectedIndex.add(index);
-          // selectedIndex = index; For store single index
         });
       },
       onFocusChange: (hasFocus) {
