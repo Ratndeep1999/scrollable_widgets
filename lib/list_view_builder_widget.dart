@@ -45,10 +45,12 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
     return ListTile(
       onTap: () {
         debugPrint('On Clicked $index');
+        // re-drawn widget tree by calling build method
         setState(() {
           // selectedIndex = index; For store single index
           // indexes store to selectedIndex
           selectedIndex.add(index);
+          debugPrint(selectedIndex.toString());
         });
       },
       onFocusChange: (hasFocus) {
