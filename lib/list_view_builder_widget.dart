@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollablewidgets/user_model.dart';
 
@@ -24,9 +23,7 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
       ),
 
       body: ListView.builder(
-        padding: kIsWeb
-            ? const EdgeInsets.symmetric(horizontal: 400.0)
-            : const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         itemCount: users.length,
         itemBuilder: (BuildContext context, index) {
           //selectedIndex == index; For single tile selection
