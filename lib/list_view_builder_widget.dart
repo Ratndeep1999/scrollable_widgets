@@ -26,9 +26,9 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
         padding: const EdgeInsets.all(16.0),
         itemCount: users.length,
         itemBuilder: (BuildContext context, index) {
+          //selectedIndex == index; For single tile selection
           // tile is selected if it's index matches
           bool isSelected = selectedIndex.contains(index) ? true : false;
-          //selectedIndex == index; For single tile selection
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 4.0),
 
@@ -48,8 +48,8 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
         // re-drawn widget tree by calling build method
         setState(() {
           // selectedIndex = index; For store single index
-          // indexes store to selectedIndex
-          selectedIndex.add(index);
+          /// Method to Store or Remove items
+          selectIndex(index);
           debugPrint(selectedIndex.toString());
         });
       },
@@ -98,5 +98,13 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
       focusColor: Colors.orange,
       focusNode: FocusNode(),
     );
+  }
+
+  // Method to add and remove index(items) after Tap on Tile
+  void selectIndex(int index) {
+    // If index not contains particular index then add if contains then remove it
+    selectedIndex.contains(index)
+        ? selectedIndex.remove(index)
+        : selectedIndex.add(index);
   }
 }
