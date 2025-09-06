@@ -132,12 +132,12 @@ class HomePage extends StatelessWidget {
     required VoidCallback onTap,
   }) {
     return Padding(
-      padding: kIsWeb
-          ? const EdgeInsets.symmetric(horizontal: 400.0, vertical: 16.0)
-          : const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: SizedBox(
         height: MediaQuery.of(context).size.height * 0.07,
-        width: double.infinity,
+        width: kIsWeb
+            ? MediaQuery.of(context).size.height * 0.7
+            : double.infinity,
         // onTap
         child: InkWell(
           onTap: onTap,
