@@ -133,35 +133,37 @@ class HomePage extends StatelessWidget {
   }) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.07,
-        width: kIsWeb
-            ? MediaQuery.of(context).size.height * 0.7
-            : double.infinity,
-        // onTap
-        child: InkWell(
-          onTap: onTap,
-          borderRadius: BorderRadius.circular(30.0),
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30.0),
-              color: Colors.grey[300],
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                // Text
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.orange,
+      child: Center(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height * 0.07,
+          width: kIsWeb
+              ? MediaQuery.of(context).size.height * 0.7
+              : double.infinity,
+          // onTap
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(30.0),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.0),
+                color: Colors.grey[300],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  // Text
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.orange,
+                    ),
                   ),
-                ),
-                // Icon
-                Icon(Icons.navigate_next, size: 50, color: Colors.orange),
-              ],
+                  // Icon
+                  Icon(Icons.navigate_next, size: 50, color: Colors.orange),
+                ],
+              ),
             ),
           ),
         ),
