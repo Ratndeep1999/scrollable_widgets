@@ -32,7 +32,7 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 4.0),
 
-            /// ListView method
+            /// ListTile method
             child: buildListTile(index, isSelected),
           );
         },
