@@ -18,4 +18,4 @@ samples, guidance on mobile development, and a full API reference.
 
 # result images
 
-![homepage](assets\result images\Android\homepage.png)
+![homepage](assets/result_images/Android/homepage.png)
