@@ -14,7 +14,7 @@ class _ListViewSeparatedAdsWidgetState
   final Set<int> _selectedItems = {};
 
   // Method to check is Item selected or not
-   _toggleItemSelection(int index){
+  _toggleItemSelection(int index) {
     if (_selectedItems.contains(index)) {
       _selectedItems.remove(index);
     } else {
@@ -81,8 +81,50 @@ class _ListViewSeparatedAdsWidgetState
               ),
             );
           },
+
+          /// Advertisement Section
           separatorBuilder: (BuildContext context, int index) {
-            return SizedBox(height: 0.0, width: 0.0);
+            return Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 8.0,
+                horizontal: 16.0,
+              ),
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Color(0xFFDEC20B),
+                    radius: 22.0,
+                    child: Text(
+                      'A',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  SizedBox(
+                    height: 28,
+                    width: 40,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Color(0xFFDEC20B),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      position: DecorationPosition.background,
+                      child: Center(
+                        child: Text(
+                          'AD',
+                          style: TextStyle(fontSize: 16.0, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+            // SizedBox(height: 0.0, width: 0.0);
           },
           itemCount: users.length,
         ),
