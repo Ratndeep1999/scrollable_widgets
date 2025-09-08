@@ -24,7 +24,13 @@ class _ListViewSeparatedAdsWidgetState
       body: SafeArea(
         child: ListView.separated(
           itemBuilder: (BuildContext context, int index) {
-            return ListTile();
+            return ListTile(
+              // user images
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/person20.jpg'),
+                radius: 25.0,
+              ),
+            );
           },
           separatorBuilder: (BuildContext context, int index){
             return Divider();
