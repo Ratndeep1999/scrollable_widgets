@@ -46,10 +46,14 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
               child: ListTileWidget(
                 selectedTile: isTileSelected,
                 itemIndex: index,
-                onTap: () => _toggleSelection(index)
+                onTap: () => _toggleSelection(index),
+                userName: users[index].name,
+                userProfession: users[index].profession,
+                userPhoto: 'assets/images/${users[index].image}',
               ),
             );
           },
+          itemCount: users.length,
           separatorBuilder: (BuildContext context, int index) {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -60,13 +64,11 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
               ),
             );
           },
-          itemCount: users.length,
         ),
       ),
     );
   }
 }
-
 
 /// Refactored Tile Widget
 class ListTileWidget extends StatelessWidget {
@@ -75,14 +77,21 @@ class ListTileWidget extends StatelessWidget {
     required bool selectedTile,
     required this.itemIndex,
     required VoidCallback onTap,
+    required String userName,
+    required String userProfession,
+    required String userPhoto,
   }) : _isTileSelected = selectedTile,
-       _onTap = onTap;
+       _onTap = onTap,
+       _name = userName,
+       _profession = userProfession,
+       _image = userPhoto;
 
+  // For List Tile Toggle Logic
   final int itemIndex;
   final bool _isTileSelected;
   final VoidCallback _onTap;
 
-  // For Content
+  // For Dynamic Content
   final String _name;
   final String _profession;
   final String _image;
@@ -93,11 +102,14 @@ class ListTileWidget extends StatelessWidget {
     return ListTile(
       // main content
       leading: CircleAvatar(
-        backgroundImage: AssetImage('assets/images/person39.jpg'),
+        // user image
+        backgroundImage: AssetImage(_image),
         radius: 30,
       ),
-      title: Text('Title'),
-      subtitle: Text('Description of Title'),
+      // user name
+      title: Text(_name),
+      // user profession
+      subtitle: Text(_profession),
       trailing: _isTileSelected
           ? Icon(
               Icons.check_circle,
