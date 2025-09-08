@@ -54,7 +54,4 @@ List<User> users = [
   User('Peyton Wright', "Russian Model", 'person40.jpg'),
   User('Sierra Stone', "Senior Master Chief", 'person41.jpg'),
 
-
-
-
 ];
