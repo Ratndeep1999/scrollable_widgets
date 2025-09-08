@@ -11,6 +11,7 @@ class ListViewSeparatedWidget extends StatefulWidget {
 
 class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
   bool _isTileSelected = false;
+  Set <int> _selectedItems = {};
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,8 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
           cacheExtent: 0.0,
           itemBuilder: (BuildContext context, int index) {
+            // Check tile index is added or not if add then tile true
+            _isTileSelected = _selectedItems.contains(index) ;
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: ListTile(
@@ -46,7 +49,7 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
                       )
                     : Icon(Icons.circle, color: Colors.grey[500], size: 25.0),
                 // styling
-                tileColor: Colors.yellow[100],
+                tileColor: Colors.yellow[200],
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
                 ),
@@ -68,8 +71,11 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
                 ),
                 // after selected
                 onTap: () {
+                  debugPrint(index.toString());
                   setState(() {
-                    _isTileSelected = !_isTileSelected;
+                    //isTileSelected = !_isTileSelected;
+                    _selectedItems.add(index);
+                    debugPrint('Stored Index : $_selectedItems');
                   });
                 },
                 selected: _isTileSelected,
