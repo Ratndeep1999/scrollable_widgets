@@ -19,20 +19,23 @@ class ListViewSeparatedWidget extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.0),
           cacheExtent: 0.0,
           itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-              leading: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/person39.jpg'),
-                radius: 30,
-              ),
-              title: Text('Title'),
-              subtitle: Text('Description of Title'),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.0),
-              ),
-              tileColor: Colors.yellow[100],
-              contentPadding: EdgeInsets.symmetric(
-                vertical: 4.0,
-                horizontal: 16.0,
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/person39.jpg'),
+                  radius: 30,
+                ),
+                title: Text('Title'),
+                subtitle: Text('Description of Title'),
+                tileColor: Colors.yellow[100],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 4.0,
+                  horizontal: 16.0,
+                ),
               ),
             );
           },
