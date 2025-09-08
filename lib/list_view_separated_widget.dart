@@ -9,7 +9,7 @@ class ListViewSeparatedWidget extends StatefulWidget {
 }
 
 class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
-  final bool _isTileSelected = false;
+  bool _isTileSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
                   vertical: 4.0,
                   horizontal: 16.0,
                 ),
-                textColor: Colors.grey[500],
+                textColor: Colors.grey,
                 titleTextStyle: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w700,
@@ -61,6 +61,11 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
                   height: 1.5,
                 ),
                 // after selected
+                onTap: (){
+                  setState(() {
+                    _isTileSelected = !_isTileSelected;
+                  });
+                },
                 selected: _isTileSelected,
                 selectedTileColor: Colors.yellow,
                 selectedColor: Colors.black,
