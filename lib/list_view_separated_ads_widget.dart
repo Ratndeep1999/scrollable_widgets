@@ -23,16 +23,20 @@ class _ListViewSeparatedAdsWidgetState
       ),
       body: SafeArea(
         child: ListView.separated(
+          padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+          physics: BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
-              // user images
+              // Main content
               leading: CircleAvatar(
                 backgroundImage: AssetImage('assets/images/person20.jpg'),
                 radius: 25.0,
               ),
+              title: Text('User Name'),
+              subtitle: Text('User Profession'),
             );
           },
-          separatorBuilder: (BuildContext context, int index){
+          separatorBuilder: (BuildContext context, int index) {
             return Divider();
           },
           itemCount: users.length,
