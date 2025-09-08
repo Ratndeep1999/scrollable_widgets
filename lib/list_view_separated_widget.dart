@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:scrollablewidgets/user_model.dart';
 
-class ListViewSeparatedWidget extends StatelessWidget {
+class ListViewSeparatedWidget extends StatefulWidget {
   const ListViewSeparatedWidget({super.key});
+
+  @override
+  State<ListViewSeparatedWidget> createState() => _ListViewSeparatedWidgetState();
+}
+
+class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
+  final bool _isTileSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +29,17 @@ class ListViewSeparatedWidget extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: ListTile(
+                // main content
                 leading: CircleAvatar(
                   backgroundImage: AssetImage('assets/images/person39.jpg'),
                   radius: 30,
                 ),
                 title: Text('Title'),
                 subtitle: Text('Description of Title'),
-                trailing: Icon(Icons.circle, color: Colors.grey[500]),
+                trailing: _isTileSelected
+                    ? Icon(Icons.check, color: Colors.grey[500])
+                    : Icon(Icons.circle, color: Colors.grey[500]),
+                // styling
                 tileColor: Colors.yellow[100],
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
@@ -37,6 +48,22 @@ class ListViewSeparatedWidget extends StatelessWidget {
                   vertical: 4.0,
                   horizontal: 16.0,
                 ),
+                textColor: Colors.grey[500],
+                titleTextStyle: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 2.0,
+                ),
+                subtitleTextStyle: TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w400,
+                  wordSpacing: 1.5,
+                  height: 1.5,
+                ),
+                // after selected
+                selected: _isTileSelected,
+                selectedTileColor: Colors.yellow,
+                selectedColor: Colors.black,
               ),
             );
           },
