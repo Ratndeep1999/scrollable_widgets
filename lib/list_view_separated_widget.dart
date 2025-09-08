@@ -88,7 +88,14 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
             );
           },
           separatorBuilder: (BuildContext context, int index) {
-            return Divider();
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: Divider(
+                color: Colors.grey,
+                thickness: 1,
+                radius: BorderRadius.circular(50.0),
+              ),
+            );
           },
           itemCount: users.length,
         ),
