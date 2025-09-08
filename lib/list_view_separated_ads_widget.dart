@@ -42,11 +42,11 @@ class _ListViewSeparatedAdsWidgetState
                 subtitle: Text('User Profession'),
                 trailing: _isTileSelected
                     ? Icon(Icons.check_circle, size: 25.0)
-                    : Icon(Icons.circle, size: 25.0),
+                    : Icon(Icons.circle_outlined, size: 25.0),
                 // Styling
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
-                  side: BorderSide(color: Colors.black54, width: 1.5),
+                  side: BorderSide(color: Colors.black),
                 ),
                 titleAlignment: ListTileTitleAlignment.threeLine,
                 titleTextStyle: TextStyle(
@@ -70,7 +70,7 @@ class _ListViewSeparatedAdsWidgetState
                   });
                 },
                 selected: _isTileSelected,
-                selectedTileColor: Colors.black,
+                selectedTileColor: Colors.black87,
                 selectedColor: Colors.white,
               ),
             );
