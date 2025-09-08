@@ -11,6 +11,8 @@ class ListViewSeparatedAdsWidget extends StatefulWidget {
 
 class _ListViewSeparatedAdsWidgetState
     extends State<ListViewSeparatedAdsWidget> {
+  bool _isTileSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +38,9 @@ class _ListViewSeparatedAdsWidgetState
                 ),
                 title: Text('User Name'),
                 subtitle: Text('User Profession'),
-                trailing: Icon(Icons.circle),
+                trailing: _isTileSelected
+                    ? Icon(Icons.check_circle, size: 25.0)
+                    : Icon(Icons.circle, size: 25.0),
                 // Styling
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
@@ -53,6 +57,11 @@ class _ListViewSeparatedAdsWidgetState
                   fontSize: 15.0,
                   color: Colors.black,
                 ),
+                // Styling for selected items
+                onTap: () {},
+                selected: _isTileSelected,
+                selectedTileColor: Colors.black,
+                selectedColor: Colors.white,
               ),
             );
           },
