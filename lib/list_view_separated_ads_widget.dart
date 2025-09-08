@@ -26,14 +26,23 @@ class _ListViewSeparatedAdsWidgetState
           padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
           physics: BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-              // Main content
-              leading: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/person20.jpg'),
-                radius: 25.0,
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                // Main content
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/person20.jpg'),
+                  radius: 25.0,
+                ),
+                title: Text('User Name'),
+                subtitle: Text('User Profession'),
+                trailing: Icon(Icons.circle),
+                // Styling
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.0),
+                  side: BorderSide(color: Colors.black54,width: 1.5)
+                ),
               ),
-              title: Text('User Name'),
-              subtitle: Text('User Profession'),
             );
           },
           separatorBuilder: (BuildContext context, int index) {
