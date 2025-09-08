@@ -40,7 +40,18 @@ class _ListViewSeparatedAdsWidgetState
                 // Styling
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
-                  side: BorderSide(color: Colors.black54,width: 1.5)
+                  side: BorderSide(color: Colors.black54, width: 1.5),
+                ),
+                titleAlignment: ListTileTitleAlignment.threeLine,
+                titleTextStyle: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                  letterSpacing: 1.0,
+                ),
+                subtitleTextStyle: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.black,
                 ),
               ),
             );
