@@ -11,7 +11,18 @@ class ListViewSeparatedAdsWidget extends StatefulWidget {
 
 class _ListViewSeparatedAdsWidgetState
     extends State<ListViewSeparatedAdsWidget> {
-  Set<int> _selectedItems = {};
+  final Set<int> _selectedItems = {};
+
+  // Method to check is Item selected or not
+   _toggleItemSelection(int index){
+    if (_selectedItems.contains(index)) {
+      _selectedItems.remove(index);
+    } else {
+      _selectedItems.add(index);
+    }
+    setState(() {});
+    debugPrint('Selected Index : $_selectedItems');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +39,10 @@ class _ListViewSeparatedAdsWidgetState
           padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
           physics: BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
-            // Check is _selecteditem contains index or not
-            bool _isTileSelected = _selectedItems.contains(index);
+            // Check is _selected item contains index or not
+            bool isTileSelected = _selectedItems.contains(index);
             return Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 6.0),
               child: ListTile(
                 // Main content
                 leading: CircleAvatar(
@@ -40,7 +51,7 @@ class _ListViewSeparatedAdsWidgetState
                 ),
                 title: Text('User Name'),
                 subtitle: Text('User Profession'),
-                trailing: _isTileSelected
+                trailing: isTileSelected
                     ? Icon(Icons.check_circle, size: 25.0)
                     : Icon(Icons.circle_outlined, size: 25.0),
                 // Styling
@@ -61,22 +72,17 @@ class _ListViewSeparatedAdsWidgetState
                 ),
                 // Styling for selected items
                 onTap: () {
-                  // Method for selected items
-                  setState(() {
-                    _selectedItems.contains(index)
-                        ? _selectedItems.remove(index)
-                        : _selectedItems.add(index);
-                    debugPrint('Selected Index : $_selectedItems');
-                  });
+                  /// Method for items select or de-select
+                  _toggleItemSelection(index);
                 },
-                selected: _isTileSelected,
+                selected: isTileSelected,
                 selectedTileColor: Colors.black87,
                 selectedColor: Colors.white,
               ),
             );
           },
           separatorBuilder: (BuildContext context, int index) {
-            return Divider(color: Colors.black, thickness: 2.0);
+            return SizedBox(height: 0.0, width: 0.0);
           },
           itemCount: users.length,
         ),
