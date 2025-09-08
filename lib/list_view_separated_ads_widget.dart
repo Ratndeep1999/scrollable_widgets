@@ -11,7 +11,8 @@ class ListViewSeparatedAdsWidget extends StatefulWidget {
 
 class _ListViewSeparatedAdsWidgetState
     extends State<ListViewSeparatedAdsWidget> {
-  bool _isTileSelected = false;
+
+  Set <int> _selectedItems = {};
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,8 @@ class _ListViewSeparatedAdsWidgetState
           padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
           physics: BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
+            // Check is _selecteditem contains index or not
+            bool _isTileSelected = _selectedItems.contains(index);
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
@@ -61,7 +64,8 @@ class _ListViewSeparatedAdsWidgetState
                 onTap: () {
                   // Method for selected items
                   setState(() {
-                    _isTileSelected = !_isTileSelected;
+                    _selectedItems.add(index);
+                    debugPrint('Selected Index : $_selectedItems');
                   });
                 },
                 selected: _isTileSelected,
