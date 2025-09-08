@@ -16,7 +16,7 @@ class ListViewSeparatedWidget extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView.separated(
-          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
           cacheExtent: 0.0,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
@@ -28,7 +28,7 @@ class ListViewSeparatedWidget extends StatelessWidget {
                 ),
                 title: Text('Title'),
                 subtitle: Text('Description of Title'),
-                trailing: Icon(Icons.circle, color: Colors.grey[500],),
+                trailing: Icon(Icons.circle, color: Colors.grey[500]),
                 tileColor: Colors.yellow[100],
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
