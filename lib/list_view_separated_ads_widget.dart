@@ -11,8 +11,7 @@ class ListViewSeparatedAdsWidget extends StatefulWidget {
 
 class _ListViewSeparatedAdsWidgetState
     extends State<ListViewSeparatedAdsWidget> {
-
-  Set <int> _selectedItems = {};
+  Set<int> _selectedItems = {};
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +63,9 @@ class _ListViewSeparatedAdsWidgetState
                 onTap: () {
                   // Method for selected items
                   setState(() {
-                    _selectedItems.add(index);
+                    _selectedItems.contains(index)
+                        ? _selectedItems.remove(index)
+                        : _selectedItems.add(index);
                     debugPrint('Selected Index : $_selectedItems');
                   });
                 },
@@ -75,7 +76,7 @@ class _ListViewSeparatedAdsWidgetState
             );
           },
           separatorBuilder: (BuildContext context, int index) {
-            return Divider(color: Colors.black, thickness: 2.0,);
+            return Divider(color: Colors.black, thickness: 2.0);
           },
           itemCount: users.length,
         ),
