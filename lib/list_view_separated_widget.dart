@@ -5,7 +5,8 @@ class ListViewSeparatedWidget extends StatefulWidget {
   const ListViewSeparatedWidget({super.key});
 
   @override
-  State<ListViewSeparatedWidget> createState() => _ListViewSeparatedWidgetState();
+  State<ListViewSeparatedWidget> createState() =>
+      _ListViewSeparatedWidgetState();
 }
 
 class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
@@ -37,8 +38,13 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
                 title: Text('Title'),
                 subtitle: Text('Description of Title'),
                 trailing: _isTileSelected
-                    ? Icon(Icons.check, color: Colors.grey[500])
-                    : Icon(Icons.circle, color: Colors.grey[500]),
+                    ? Icon(
+                        Icons.check_circle,
+                        color: Colors.black,
+                        weight: 50,
+                        size: 25.0,
+                      )
+                    : Icon(Icons.circle, color: Colors.grey[500], size: 25.0),
                 // styling
                 tileColor: Colors.yellow[100],
                 shape: RoundedRectangleBorder(
@@ -61,7 +67,7 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
                   height: 1.5,
                 ),
                 // after selected
-                onTap: (){
+                onTap: () {
                   setState(() {
                     _isTileSelected = !_isTileSelected;
                   });
