@@ -28,6 +28,7 @@ class ListViewSeparatedWidget extends StatelessWidget {
                 ),
                 title: Text('Title'),
                 subtitle: Text('Description of Title'),
+                trailing: Icon(Icons.circle, color: Colors.grey[500],),
                 tileColor: Colors.yellow[100],
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
