@@ -58,7 +58,12 @@ class _ListViewSeparatedAdsWidgetState
                   color: Colors.black,
                 ),
                 // Styling for selected items
-                onTap: () {},
+                onTap: () {
+                  // Method for selected items
+                  setState(() {
+                    _isTileSelected = !_isTileSelected;
+                  });
+                },
                 selected: _isTileSelected,
                 selectedTileColor: Colors.black,
                 selectedColor: Colors.white,
@@ -66,7 +71,7 @@ class _ListViewSeparatedAdsWidgetState
             );
           },
           separatorBuilder: (BuildContext context, int index) {
-            return Divider();
+            return Divider(color: Colors.black, thickness: 2.0,);
           },
           itemCount: users.length,
         ),
