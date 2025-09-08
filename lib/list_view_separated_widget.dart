@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scrollablewidgets/list_view_separated_ads_widget.dart';
 import 'package:scrollablewidgets/user_model.dart';
 
 class ListViewSeparatedWidget extends StatefulWidget {
@@ -29,7 +30,20 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
         title: Text('ListView.separated Widgets'),
         centerTitle: true,
         backgroundColor: Colors.orange[300],
-        actions: [Icon(Icons.navigate_next, size: 40)],
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ListViewSeparatedAdsWidget();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.navigate_next, size: 40),
+          ),
+        ],
         actionsPadding: EdgeInsets.only(right: 10.0),
       ),
       body: SafeArea(
