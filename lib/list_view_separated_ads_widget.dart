@@ -43,42 +43,8 @@ class _ListViewSeparatedAdsWidgetState
             bool isTileSelected = _selectedItems.contains(index);
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 6.0),
-              child: ListTile(
-                // Main content
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/person20.jpg'),
-                  radius: 25.0,
-                ),
-                title: Text('User Name'),
-                subtitle: Text('User Profession'),
-                trailing: isTileSelected
-                    ? Icon(Icons.check_circle, size: 25.0)
-                    : Icon(Icons.circle_outlined, size: 25.0),
-                // Styling
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16.0),
-                  side: BorderSide(color: Colors.black),
-                ),
-                titleAlignment: ListTileTitleAlignment.threeLine,
-                titleTextStyle: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
-                  letterSpacing: 1.0,
-                ),
-                subtitleTextStyle: TextStyle(
-                  fontSize: 15.0,
-                  color: Colors.black,
-                ),
-                // Styling for selected items
-                onTap: () {
-                  /// Method for items select or de-select
-                  _toggleItemSelection(index);
-                },
-                selected: isTileSelected,
-                selectedTileColor: Colors.black87,
-                selectedColor: Colors.white,
-              ),
+              // ListTile Widget
+              child: ListTileWidget(),
             );
           },
 
@@ -138,6 +104,51 @@ class _ListViewSeparatedAdsWidgetState
           itemCount: users.length,
         ),
       ),
+    );
+  }
+}
+
+
+class ListTileWidget extends StatelessWidget {
+  const ListTileWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      // Main content
+      leading: CircleAvatar(
+        backgroundImage: AssetImage('assets/images/person20.jpg'),
+        radius: 25.0,
+      ),
+      title: Text('User Name'),
+      subtitle: Text('User Profession'),
+      trailing: isTileSelected
+          ? Icon(Icons.check_circle, size: 25.0)
+          : Icon(Icons.circle_outlined, size: 25.0),
+      // Styling
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+        side: BorderSide(color: Colors.black),
+      ),
+      titleAlignment: ListTileTitleAlignment.threeLine,
+      titleTextStyle: TextStyle(
+        fontSize: 20.0,
+        fontWeight: FontWeight.w500,
+        color: Colors.black,
+        letterSpacing: 1.0,
+      ),
+      subtitleTextStyle: TextStyle(
+        fontSize: 15.0,
+        color: Colors.black,
+      ),
+      // Styling for selected items
+      onTap: () {
+        /// Method for items select or de-select
+        _toggleItemSelection(index);
+      },
+      selected: isTileSelected,
+      selectedTileColor: Colors.black87,
+      selectedColor: Colors.white,
     );
   }
 }
