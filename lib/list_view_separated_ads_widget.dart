@@ -84,47 +84,56 @@ class _ListViewSeparatedAdsWidgetState
 
           /// Advertisement Section
           separatorBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 8.0,
-                horizontal: 16.0,
-              ),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Color(0xFFDEC20B),
-                    radius: 22.0,
-                    child: Text(
-                      'A',
-                      style: TextStyle(
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
-                      ),
+            // If index is fully divisible by 4 the add show otherwise empty size box
+            return (index % 4 == 0)
+                ?
+                  // Advertisement Section
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 4.0,
+                      horizontal: 16.0,
                     ),
-                  ),
-                  Spacer(),
-                  SizedBox(
-                    height: 28,
-                    width: 40,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Color(0xFFDEC20B),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      position: DecorationPosition.background,
-                      child: Center(
-                        child: Text(
-                          'AD',
-                          style: TextStyle(fontSize: 16.0, color: Colors.white),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Color(0xFFDEC20B),
+                          radius: 22.0,
+                          child: Text(
+                            'A',
+                            style: TextStyle(
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
-                      ),
+                        Spacer(),
+                        SizedBox(
+                          height: 28,
+                          width: 40,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: Color(0xFFDEC20B),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            position: DecorationPosition.background,
+                            child: Center(
+                              child: Text(
+                                'AD',
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-            );
-            // SizedBox(height: 0.0, width: 0.0);
+                  )
+                :
+                  // Empty Size box
+                  SizedBox(height: 0.0, width: 0.0);
           },
           itemCount: users.length,
         ),
