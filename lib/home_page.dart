@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollablewidgets/list_view_builder_widget.dart';
+import 'package:scrollablewidgets/list_view_separated_widget.dart';
 import 'package:scrollablewidgets/list_view_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -70,7 +71,7 @@ class HomePage extends StatelessWidget {
                   // Slide from Bottom
                   PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        ListViewBuilderWidget(),
+                        ListViewSeparatedWidget(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
                           const begin = Offset(0.0, 1.0);
