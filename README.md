@@ -22,8 +22,12 @@ samples, guidance on mobile development, and a full API reference.
 ![homepage](assets/result_images/Android/homepage.png)
 ![listview](assets/result_images/Android/listview.png)
 ![listview builder](assets/result_images/Android/listview_builder.png)
+![listview separated by divider](assets/result_images/Android/listview__separated_divider.png)
+![listview separated by ads](assets/result_images/Android/listview__separated_ads.png)
 
 # Web
 ![homepage](assets/result_images/Web/homepage.png)
 ![listview](assets/result_images/Web/listview.png)
 ![listview builder](assets/result_images/Web/listview_builder.png)
+![listview separated by divider](assets/result_images/Web/listview_separated_divider.png)
+![listview separated by ads](assets/result_images/Web/listview_separated_ads.png)
