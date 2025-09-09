@@ -9,12 +9,14 @@ class ScrollControllerWidget extends StatelessWidget {
     Color(0xFFffc8c8),
     Color(0xFFf9c58d),
     Color(0xFFb5c6e0),
-    Color(0xFFaefb2a),
+    Color(0xFFbc1b68),
     Color(0xFF5cb270),
     Color(0xFF34073d),
     Color(0xFFffed00),
     Color(0xFFeed991),
   ];
+
+  final ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,10 @@ class ScrollControllerWidget extends StatelessWidget {
                   itemCount: _colors.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        debugPrint('Item : ${index + 1}');
+                      },
+                      splashColor: Colors.transparent,
                       child: Container(
                         margin: EdgeInsets.symmetric(
                           vertical: 10.0,
