@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:scrollablewidgets/list_view_builder_widget.dart';
 import 'package:scrollablewidgets/list_view_separated_widget.dart';
 import 'package:scrollablewidgets/list_view_widget.dart';
+import 'package:scrollablewidgets/single_child_scroll_view_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -119,6 +120,38 @@ class HomePage extends StatelessWidget {
                   ),
                 );
               },
+            ),
+
+            /// SingleChildScrollView
+            buildItem(
+              context,
+              title: 'SingleChildScrollView',
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return SingleChildScrollViewWidget();
+                }));
+              },
+            ),
+
+            /// ScrollController
+            buildItem(
+              context,
+              title: 'ScrollController',
+              onTap: () {},
+            ),
+
+            /// Interactive ScrollController
+            buildItem(
+              context,
+              title: 'Interactive ScrollController',
+              onTap: () {},
+            ),
+
+            /// Nested Listview
+            buildItem(
+              context,
+              title: 'Nested ListView',
+              onTap: () {},
             ),
           ],
         ),
