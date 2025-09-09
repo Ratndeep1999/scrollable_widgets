@@ -36,7 +36,7 @@ class ScrollControllerWidget extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Horizontal List Items
+              /// Horizontal List Items
               SizedBox(
                 height: 150,
                 child: ListView.builder(
@@ -56,9 +56,7 @@ class ScrollControllerWidget extends StatelessWidget {
                 ),
               ),
 
-              // SizedBox(height: 32.0),
-
-              // Vertical List Items
+              /// Vertical List Items
               Expanded(
                 child: ListView.builder(
                   padding: EdgeInsets.symmetric(
