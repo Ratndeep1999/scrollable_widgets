@@ -19,8 +19,8 @@ class ScrollControllerWidget extends StatelessWidget {
 
   final ScrollController _scrollController = ScrollController();
 
+  // Method to get selected item
   void _getSelectedItem(int index) {
-
     _scrollController.animateTo(
       index * _containerHeight + 64,
       duration: Duration(seconds: 1),
