@@ -47,37 +47,45 @@ class _ListViewSeparatedWidgetState extends State<ListViewSeparatedWidget> {
         actionsPadding: EdgeInsets.only(right: 10.0),
       ),
       body: SafeArea(
-        child: ListView.separated(
-          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
-          cacheExtent: 0.0,
-          itemBuilder: (BuildContext context, int index) {
-            // Check tile index is added or not if add then tile true
-            bool isTileSelected = _selectedItems.contains(index);
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Scrollbar(
+          thumbVisibility: true,
+          trackVisibility: false,
+          thickness: 10.0,
+          interactive: true,
+          radius: Radius.circular(16.0),
+          scrollbarOrientation: ScrollbarOrientation.right,
+          child: ListView.separated(
+            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+            cacheExtent: 0.0,
+            itemBuilder: (BuildContext context, int index) {
+              // Check tile index is added or not if add then tile true
+              bool isTileSelected = _selectedItems.contains(index);
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
 
-              /// ListTile Widget
-              child: ListTileWidget(
-                selectedTile: isTileSelected,
-                itemIndex: index,
-                onTap: () => _toggleSelection(index),
-                userName: users[index].name,
-                userProfession: users[index].profession,
-                userPhoto: 'assets/images/${users[index].image}',
-              ),
-            );
-          },
-          itemCount: users.length,
-          separatorBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30.0),
-              child: Divider(
-                color: Colors.grey,
-                thickness: 1,
-                radius: BorderRadius.circular(50.0),
-              ),
-            );
-          },
+                /// ListTile Widget
+                child: ListTileWidget(
+                  selectedTile: isTileSelected,
+                  itemIndex: index,
+                  onTap: () => _toggleSelection(index),
+                  userName: users[index].name,
+                  userProfession: users[index].profession,
+                  userPhoto: 'assets/images/${users[index].image}',
+                ),
+              );
+            },
+            itemCount: users.length,
+            separatorBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: Divider(
+                  color: Colors.grey,
+                  thickness: 1,
+                  radius: BorderRadius.circular(50.0),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
