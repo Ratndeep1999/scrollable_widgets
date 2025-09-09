@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ScrollControllerWidget extends StatelessWidget {
-   ScrollControllerWidget({super.key});
-  
+  ScrollControllerWidget({super.key});
+
   final List<Color> _colors = <Color>[
     Color(0xFF0061ff),
     Color(0xFFa9ff68),
@@ -37,13 +37,39 @@ class ScrollControllerWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Horizontal List Items
-              Expanded(
+              SizedBox(
+                height: 150,
                 child: ListView.builder(
+                  padding: EdgeInsets.all(16.0),
+                  scrollDirection: Axis.horizontal,
                   itemCount: _colors.length,
                   itemBuilder: (context, index) {
                     return Container(
+                      margin: EdgeInsets.symmetric(
+                        vertical: 10.0,
+                        horizontal: 8.0,
+                      ),
+                      width: 100,
+                      decoration: BoxDecoration(color: _colors[index]),
+                    );
+                  },
+                ),
+              ),
+
+              // SizedBox(height: 32.0),
+
+              // Vertical List Items
+              Expanded(
+                child: ListView.builder(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 16.0,
+                    horizontal: 70.0,
+                  ),
+                  itemCount: _colors.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.symmetric(vertical: 32.0),
                       height: 250,
-                      width: 250,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: _colors[index],
@@ -60,8 +86,6 @@ class ScrollControllerWidget extends StatelessWidget {
                   },
                 ),
               ),
-
-              // Vertical List Items
             ],
           ),
         ),
