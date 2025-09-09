@@ -15,8 +15,17 @@ class ScrollControllerWidget extends StatelessWidget {
     Color(0xFFffed00),
     Color(0xFFeed991),
   ];
+  final double _containerHeight = 250;
 
   final ScrollController _scrollController = ScrollController();
+
+  void _getSelectedItem(int index) {
+    _scrollController.animateTo(
+      index * _containerHeight,
+      duration: Duration(seconds: 1),
+      curve: Curves.bounceIn,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +56,9 @@ class ScrollControllerWidget extends StatelessWidget {
                   itemCount: _colors.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: (){
+                      onTap: () {
                         debugPrint('Item : ${index + 1}');
+                        _getSelectedItem(index);
                       },
                       splashColor: Colors.transparent,
                       child: Container(
@@ -67,6 +77,7 @@ class ScrollControllerWidget extends StatelessWidget {
               /// Vertical List Items
               Expanded(
                 child: ListView.builder(
+                  controller: _scrollController,
                   padding: EdgeInsets.symmetric(
                     vertical: 16.0,
                     horizontal: 70.0,
