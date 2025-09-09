@@ -41,7 +41,7 @@ class _ListViewBuilderWidgetState extends State<ListViewBuilderWidget> {
   }
 
   // ListTile method
-  ListTile _buildListTile(int index, bool isSelected) {
+  Widget _buildListTile(int index, bool isSelected) {
     return ListTile(
       onTap: () {
         debugPrint('On Clicked $index');
