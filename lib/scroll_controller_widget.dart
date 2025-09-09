@@ -44,13 +44,16 @@ class ScrollControllerWidget extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: _colors.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.symmetric(
-                        vertical: 10.0,
-                        horizontal: 8.0,
+                    return InkWell(
+                      onTap: (){},
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: 10.0,
+                          horizontal: 8.0,
+                        ),
+                        width: 100,
+                        decoration: BoxDecoration(color: _colors[index]),
                       ),
-                      width: 100,
-                      decoration: BoxDecoration(color: _colors[index]),
                     );
                   },
                 ),
