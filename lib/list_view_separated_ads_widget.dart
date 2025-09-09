@@ -43,9 +43,11 @@ class _ListViewSeparatedAdsWidgetState
             bool isTileSelected = _selectedItems.contains(index);
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 6.0),
+
               /// ListTile Widget
               child: ListTileWidget(
                 isTileSelected: isTileSelected,
+
                 /// Method for items select or de-select
                 onTap: () => _toggleItemSelection(index),
                 name: users[index].name,
@@ -60,30 +62,8 @@ class _ListViewSeparatedAdsWidgetState
             // If index is fully divisible by 4 the add show otherwise empty size box
             return (index % 4 == 0)
                 ?
-                  // Advertisement Section
-                  ListTile(
-                    leading: CircleAvatar(backgroundColor: Color(0xFFDEC20B)),
-                    trailing: SizedBox(
-                      height: 28,
-                      width: 40,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          color: Color(0xFFDEC20B),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        position: DecorationPosition.background,
-                        child: Center(
-                          child: Text(
-                            'AD',
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  )
+                  /// Refactored Advertisement Method
+                  buildAdsListTile()
                 :
                   // Empty Size box
                   SizedBox(height: 0.0, width: 0.0);
@@ -93,9 +73,38 @@ class _ListViewSeparatedAdsWidgetState
       ),
     );
   }
+
+  // ListTile for Ads
+  ListTile buildAdsListTile() {
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundColor: Color(0xFFDEC20B),
+        child: Text('A', style: TextStyle(fontSize: 25, color: Colors.white)),
+      ),
+      title: Text('Advertiser'),
+      subtitle: Text('Some Details about Advertise'),
+      trailing: SizedBox(
+        height: 28,
+        width: 40,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: Color(0xFFDEC20B),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          position: DecorationPosition.background,
+          child: Center(
+            child: Text(
+              'AD',
+              style: TextStyle(fontSize: 16.0, color: Colors.white),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
-/// ListTile widget
+// ListTile widget
 class ListTileWidget extends StatelessWidget {
   const ListTileWidget({
     super.key,
