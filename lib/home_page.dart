@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:scrollablewidgets/list_view_builder_widget.dart';
 import 'package:scrollablewidgets/list_view_separated_widget.dart';
 import 'package:scrollablewidgets/list_view_widget.dart';
+import 'package:scrollablewidgets/nested_listview.dart';
 import 'package:scrollablewidgets/single_child_scroll_view_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -127,18 +128,19 @@ class HomePage extends StatelessWidget {
               context,
               title: 'SingleChildScrollView',
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return SingleChildScrollViewWidget();
-                }));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SingleChildScrollViewWidget();
+                    },
+                  ),
+                );
               },
             ),
 
             /// ScrollController
-            buildItem(
-              context,
-              title: 'ScrollController',
-              onTap: () {},
-            ),
+            buildItem(context, title: 'ScrollController', onTap: () {}),
 
             /// Interactive ScrollController
             buildItem(
@@ -151,7 +153,16 @@ class HomePage extends StatelessWidget {
             buildItem(
               context,
               title: 'Nested ListView',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return NestedListview();
+                    },
+                  ),
+                );
+              },
             ),
           ],
         ),
