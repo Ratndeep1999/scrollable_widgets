@@ -43,12 +43,14 @@ class _ListViewSeparatedAdsWidgetState
             bool isTileSelected = _selectedItems.contains(index);
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 6.0),
-              // ListTile Widget
+              /// ListTile Widget
               child: ListTileWidget(
                 isTileSelected: isTileSelected,
-
                 /// Method for items select or de-select
                 onTap: () => _toggleItemSelection(index),
+                name: users[index].name,
+                profession: users[index].profession,
+                image: 'assets/images/${users[index].image}',
               ),
             );
           },
@@ -59,47 +61,27 @@ class _ListViewSeparatedAdsWidgetState
             return (index % 4 == 0)
                 ?
                   // Advertisement Section
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 4.0,
-                      horizontal: 16.0,
-                    ),
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xFFDEC20B),
-                          radius: 22.0,
+                  ListTile(
+                    leading: CircleAvatar(backgroundColor: Color(0xFFDEC20B)),
+                    trailing: SizedBox(
+                      height: 28,
+                      width: 40,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: Color(0xFFDEC20B),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        position: DecorationPosition.background,
+                        child: Center(
                           child: Text(
-                            'A',
+                            'AD',
                             style: TextStyle(
-                              fontSize: 25.0,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 16.0,
                               color: Colors.white,
                             ),
                           ),
                         ),
-                        Spacer(),
-                        SizedBox(
-                          height: 28,
-                          width: 40,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: Color(0xFFDEC20B),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            position: DecorationPosition.background,
-                            child: Center(
-                              child: Text(
-                                'AD',
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   )
                 :
