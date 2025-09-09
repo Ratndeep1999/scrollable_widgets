@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scrollablewidgets/interactive_scroll_controller.dart';
 
 class ScrollControllerWidget extends StatelessWidget {
   ScrollControllerWidget({super.key});
@@ -37,7 +38,14 @@ class ScrollControllerWidget extends StatelessWidget {
         backgroundColor: Colors.orange[300],
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => InteractiveScrollController(),
+                ),
+              );
+            },
             icon: Icon(Icons.navigate_next, size: 40),
           ),
         ],
