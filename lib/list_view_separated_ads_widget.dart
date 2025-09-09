@@ -119,21 +119,26 @@ class ListTileWidget extends StatelessWidget {
     super.key,
     required this.isTileSelected,
     required Function() onTap,
+    required this.name,
+    required this.profession,
+    required this.image,
   }) : _onTap = onTap;
 
   final bool isTileSelected;
   final Function() _onTap;
 
+  // For Content
+  final String name;
+  final String profession;
+  final String image;
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
       // Main content
-      leading: CircleAvatar(
-        backgroundImage: AssetImage('assets/images/person20.jpg'),
-        radius: 25.0,
-      ),
-      title: Text('User Name'),
-      subtitle: Text('User Profession'),
+      leading: CircleAvatar(backgroundImage: AssetImage(image), radius: 25.0),
+      title: Text(name),
+      subtitle: Text(profession),
       trailing: isTileSelected
           ? Icon(Icons.check_circle, size: 25.0)
           : Icon(Icons.circle_outlined, size: 25.0),
