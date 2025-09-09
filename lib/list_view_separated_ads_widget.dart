@@ -44,7 +44,12 @@ class _ListViewSeparatedAdsWidgetState
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 6.0),
               // ListTile Widget
-              child: ListTileWidget(),
+              child: ListTileWidget(
+                isTileSelected: isTileSelected,
+
+                /// Method for items select or de-select
+                onTap: () => _toggleItemSelection(index),
+              ),
             );
           },
 
@@ -108,9 +113,16 @@ class _ListViewSeparatedAdsWidgetState
   }
 }
 
-
+/// ListTile widget
 class ListTileWidget extends StatelessWidget {
-  const ListTileWidget({super.key});
+  const ListTileWidget({
+    super.key,
+    required this.isTileSelected,
+    required Function() onTap,
+  }) : _onTap = onTap;
+
+  final bool isTileSelected;
+  final Function() _onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -137,14 +149,11 @@ class ListTileWidget extends StatelessWidget {
         color: Colors.black,
         letterSpacing: 1.0,
       ),
-      subtitleTextStyle: TextStyle(
-        fontSize: 15.0,
-        color: Colors.black,
-      ),
+      subtitleTextStyle: TextStyle(fontSize: 15.0, color: Colors.black),
       // Styling for selected items
       onTap: () {
-        /// Method for items select or de-select
-        _toggleItemSelection(index);
+        // Function which return index
+        _onTap();
       },
       selected: isTileSelected,
       selectedTileColor: Colors.black87,
