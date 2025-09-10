@@ -20,8 +20,19 @@ class NestedListview extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView(
+          padding: EdgeInsets.all(16.0),
           children: [
+            Container(height: 200, width: 200, color: Color(0xFF0061ff)),
+            Container(height: 200, width: 200, color: Color(0xFFa9ff68)),
+            Container(height: 200, width: 200, color: Color(0xFFffc8c8)),
+            Container(height: 200, width: 200, color: Color(0xFFf9c58d)),
+            Container(height: 200, width: 200, color: Color(0xFFb5c6e0)),
+            Container(height: 200, width: 200, color: Color(0xFFbc1b68)),
             Container(height: 200, width: 200, color: Color(0xFF5cb270)),
+            Container(height: 200, width: 200, color: Color(0xFF34073d)),
+            Container(height: 200, width: 200, color: Color(0xFFffed00)),
+            Container(height: 200, width: 200, color: Color(0xFFeed991)),
+
           ],
         ),
       ),
