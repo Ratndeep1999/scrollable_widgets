@@ -52,6 +52,18 @@ class NestedListview extends StatelessWidget {
   Widget _buildVerticalListView(){
     return ListView(
       scrollDirection: Axis.vertical,
+      children: [
+        _buildContainer(SizedBox(), 200, Color(0xFF0061ff)),
+        _buildContainer(SizedBox(), 100, Color(0xFFeed991)),
+        _buildContainer(SizedBox(), 200, Color(0xFFffc8c8)),
+        _buildContainer(SizedBox(), 300, Color(0xFFf9c58d)),
+        _buildContainer(SizedBox(), 350, Color(0xFFb5c6e0)),
+        _buildContainer(SizedBox(), 280, Color(0xFFbc1b68)),
+        _buildContainer(SizedBox(), 150, Color(0xFF0061ff)),
+        _buildContainer(SizedBox(), 200, Color(0xFF5cb270)),
+        _buildContainer(SizedBox(), 250, Color(0xFF34073d)),
+        _buildContainer(SizedBox(), 300, Color(0xFFffed00)),
+      ],
     );
   }
 
@@ -59,6 +71,18 @@ class NestedListview extends StatelessWidget {
   Widget _buildHorizontalListView(){
     return ListView(
       scrollDirection: Axis.horizontal,
+      children: [
+        _buildContainer(SizedBox(), 200, Color(0xFF0061ff)),
+        _buildContainer(SizedBox(), 100, Color(0xFFeed991)),
+        _buildContainer(SizedBox(), 200, Color(0xFFffc8c8)),
+        _buildContainer(SizedBox(), 300, Color(0xFFf9c58d)),
+        _buildContainer(SizedBox(), 350, Color(0xFFb5c6e0)),
+        _buildContainer(SizedBox(), 280, Color(0xFFbc1b68)),
+        _buildContainer(SizedBox(), 150, Color(0xFF0061ff)),
+        _buildContainer(SizedBox(), 200, Color(0xFF5cb270)),
+        _buildContainer(SizedBox(), 250, Color(0xFF34073d)),
+        _buildContainer(SizedBox(), 300, Color(0xFFffed00)),
+      ],
     );
   }
 
