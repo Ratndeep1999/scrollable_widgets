@@ -24,6 +24,7 @@ class NestedListview extends StatelessWidget {
           padding: EdgeInsets.all(16.0),
           children: [
             _buildContainer(SizedBox(), 200, Color(0xFF0061ff)),
+            _buildHorizontalListView(),
             _buildContainer(SizedBox(), 100, Color(0xFFeed991)),
             _buildContainer(SizedBox(), 200, Color(0xFFffc8c8)),
             _buildContainer(SizedBox(), 300, Color(0xFFf9c58d)),
@@ -44,6 +45,7 @@ class NestedListview extends StatelessWidget {
   Widget _buildContainer(Widget child, double height, Color colors){
     return Container(
       height: height,
+      width: height,
       color: colors,
       child: child,
     );
