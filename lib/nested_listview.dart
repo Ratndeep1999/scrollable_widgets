@@ -26,6 +26,7 @@ class NestedListview extends StatelessWidget {
             _buildContainer(SizedBox(), 200, Color(0xFF0061ff)),
             _buildHorizontalListView(),
             _buildContainer(SizedBox(), 100, Color(0xFFeed991)),
+            _buildVerticalListView(),
             _buildContainer(SizedBox(), 200, Color(0xFFffc8c8)),
             _buildContainer(SizedBox(), 300, Color(0xFFf9c58d)),
             _buildContainer(SizedBox(), 350, Color(0xFFb5c6e0)),
@@ -34,7 +35,6 @@ class NestedListview extends StatelessWidget {
             _buildContainer(SizedBox(), 200, Color(0xFF5cb270)),
             _buildContainer(SizedBox(), 250, Color(0xFF34073d)),
             _buildContainer(SizedBox(), 300, Color(0xFFffed00)),
-            _buildVerticalListView()
           ],
         ),
       ),
