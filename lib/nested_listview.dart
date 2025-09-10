@@ -42,10 +42,10 @@ class NestedListview extends StatelessWidget {
   }
 
   // Refactor Container Method
-  Widget _buildContainer(Widget child, double height, Color colors){
+  Widget _buildContainer(Widget child, double size, Color colors){
     return Container(
-      height: height,
-      width: height,
+      height: size,
+      width: size,
       color: colors,
       child: child,
     );
