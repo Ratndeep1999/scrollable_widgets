@@ -47,4 +47,22 @@ class NestedListview extends StatelessWidget {
       child: child,
     );
   }
+
+  // Vertical ListView
+  Widget _buildVerticalListView(){
+    return ListView(
+      scrollDirection: Axis.vertical,
+    );
+  }
+
+  // Horizontal ListView
+  Widget _buildHorizontalListView(){
+    return ListView(
+      scrollDirection: Axis.horizontal,
+    );
+  }
+
+
+
 }
+
