@@ -23,16 +23,16 @@ class NestedListview extends StatelessWidget {
           itemExtent: 200,
           padding: EdgeInsets.all(16.0),
           children: [
-            _buildContainer(200, Color(0xFF0061ff)),
-            _buildContainer(100, Color(0xFFeed991)),
-            _buildContainer(200, Color(0xFFffc8c8)),
-            _buildContainer(300, Color(0xFFf9c58d)),
-            _buildContainer(350, Color(0xFFb5c6e0)),
-            _buildContainer(280, Color(0xFFbc1b68)),
-            _buildContainer(150, Color(0xFF0061ff)),
-            _buildContainer(200, Color(0xFF5cb270)),
-            _buildContainer(250, Color(0xFF34073d)),
-            _buildContainer(300, Color(0xFFffed00)),
+            _buildContainer(SizedBox(), 200, Color(0xFF0061ff)),
+            _buildContainer(SizedBox(), 100, Color(0xFFeed991)),
+            _buildContainer(SizedBox(), 200, Color(0xFFffc8c8)),
+            _buildContainer(SizedBox(), 300, Color(0xFFf9c58d)),
+            _buildContainer(SizedBox(), 350, Color(0xFFb5c6e0)),
+            _buildContainer(SizedBox(), 280, Color(0xFFbc1b68)),
+            _buildContainer(SizedBox(), 150, Color(0xFF0061ff)),
+            _buildContainer(SizedBox(), 200, Color(0xFF5cb270)),
+            _buildContainer(SizedBox(), 250, Color(0xFF34073d)),
+            _buildContainer(SizedBox(), 300, Color(0xFFffed00)),
           ],
         ),
       ),
@@ -40,10 +40,11 @@ class NestedListview extends StatelessWidget {
   }
 
   // Refactor Container Method
-  Widget _buildContainer(double height, Color colors){
+  Widget _buildContainer(Widget child, double height, Color colors){
     return Container(
       height: height,
       color: colors,
+      child: child,
     );
   }
 }
