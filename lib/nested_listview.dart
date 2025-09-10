@@ -76,6 +76,8 @@ class NestedListview extends StatelessWidget {
   Widget _buildHorizontalListView(){
     return ListView(
       scrollDirection: Axis.horizontal,
+      padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+      prototypeItem: SizedBox(height: 100, width: 100),
       children: [
         _buildContainer(SizedBox(), 200, Color(0xFF0061ff)),
         _buildContainer(SizedBox(), 100, Color(0xFFeed991)),
@@ -90,8 +92,6 @@ class NestedListview extends StatelessWidget {
       ],
     );
   }
-
-
 
 }
 
