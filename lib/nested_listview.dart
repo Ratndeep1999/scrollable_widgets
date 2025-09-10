@@ -22,6 +22,7 @@ class NestedListview extends StatelessWidget {
         child: ListView(
           itemExtent: 200,
           padding: EdgeInsets.all(16.0),
+          primary: true,
           children: [
             _buildContainer(SizedBox(), 200, Color(0xFF0061ff)),
             _buildHorizontalListView(),
